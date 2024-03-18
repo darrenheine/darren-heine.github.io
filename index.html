@@ -2,17 +2,106 @@
 <html>
     <head>
         <title>Sheba's Amazing Website</title>
+        <style>
+            body {
+                background: rgb(125, 198, 205);
+                color: rgb(45, 45, 45);
+                padding: 10px;
+                font-family: arial;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+        
+            /* navigation menu */
+            nav {
+                background: rgb(239, 80, 41);
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 10px;
+            }
+            nav h1 {
+                display: flex;
+                align-items: center;
+                color: white;
+                flex: 1;
+                margin: 0;
+            }
+            nav ul {
+                list-style-image: none;
+            }
+            nav li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+        
+            /* main container area beneath menu */
+            main {
+                background: rgb(245, 238, 219);
+                display: flex;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar img {
+                width: 200px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            h2, h3 {
+                margin: 0px;
+            }
+        </style>
     </head>
     
     <body>
         <h1>Is this working?</h1>
         <div id="all-contents"> 
             <nav>
-    
+    <h1>
+        Darren's Bio
+    </h1>
+    <ul>
+        <li>
+            <a href="index.html"> Home </a>
+          </li>
+          <li>
+            <a href="portfolio.html"> Portfolio </a>
+        </li>
+    </ul>
             </nav>
     
             <main>
-    
+                <div class="sidebar">
+      <image src="https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-6/256039134_10107033682959987_996448771301528118_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=AtPBkIF7_vwAX9PaPUc&_nc_ht=scontent-hou1-1.xx&oh=00_AfDsUh1PsMjQhihTStwadgCXrQhsgWu5GZaENQXcIInCCA&oe=65FC8E34"
+                </div>
+            
+                <div class="content">
+                    <h2>
+                        Darren Heine
+                    </h2>
+                    <p>
+                        Student at Operation Spark
+                    </p>
+                    <div class="interests">
+                        <h3>Interests</h3>
+                        <ul>
+                            <li>Working out</li>
+                            <li>Rock Climbing</li>
+                            <li>Hunting</li>
+                        </ul>
+
+                    </div>
+                </div>
             </main>
         </div>
     </body>
