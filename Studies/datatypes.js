@@ -1,117 +1,147 @@
 /*
 Understanding JavaScript Data Types
 
-What are Data Types?
+Introduction:
+JavaScript is a dynamically typed language, which means variables can hold different types of data.
+Understanding the various data types is crucial for writing effective and bug-free JavaScript code.
 
-Definition: Data types in JavaScript refer to the kinds of values that can be represented and manipulated in a program.
-  JavaScript has several primitive data types and complex data types.
-
-Primitive Data Types:
-
-1. Numbers:
-   - Represents both integer and floating-point numbers.
-   - Example: 42, 3.14, -10
-
-2. Strings:
-   - Represents sequences of characters, enclosed in single or double quotes.
-   - Example: "Hello, World!", 'JavaScript'
-
-3. Booleans:
-   - Represents true or false values.
-   - Example: true, false
-
-4. Undefined:
-   - Represents the absence of a value.
-   - Example: let myVar;
-
-5. Null:
-   - Represents an intentional absence of any object value.
-   - Example: let myVar = null;
-
-Complex Data Types:
-
-1. Objects:
-   - Used to store collections of key-value pairs.
-   - Example: { name: "John", age: 30 }
-
-2. Arrays:
-   - Used to store multiple values in a single variable.
-   - Example: [1, 2, 3, 4, 5]
-
-3. Functions:
-   - Special type of object used for code reusability.
-   - Example: function add(a, b) { return a + b; }
-
-Why are They Important?
-
-Data Handling: Different data types allow for different ways of storing and manipulating data.
-
-Behavior: Each data type behaves differently when used in operations or passed as arguments to functions.
-
-Memory Management: Understanding data types helps in efficient memory allocation and management.
-
-
-Examples of JavaScript Data Types:
+Data Types in JavaScript:
 
 1. Number:
+   - Represents numeric values.
+   - Examples: 42, 3.14, -10, 0.12345, etc.
 */
 
-let num = 42;
-console.log(typeof num); // Output: number
+let myNumber = 42;
+console.log(myNumber); // Output: 42
 
 /*
 2. String:
+   - Represents textual data.
+   - Surrounded by single ('') or double ("") quotes.
+   - Examples: "Hello, World!", 'JavaScript', "12345", etc.
 */
 
-let str = "Hello, JavaScript!";
-console.log(typeof str); // Output: string
+let myString = "Hello, World!";
+console.log(myString); // Output: Hello, World!
 
 /*
 3. Boolean:
+   - Represents true or false values.
+   - Used for logical operations and conditions.
+   - Examples: true, false.
 */
 
 let isTrue = true;
-console.log(typeof isTrue); // Output: boolean
+console.log(isTrue); // Output: true
 
 /*
-4. Undefined:
+4. Array:
+   - Represents a collection of elements.
+   - Ordered, indexed, and can hold multiple data types.
+   - Examples: [1, 2, 3], ["apple", "banana", "cherry"], [true, false, true].
 */
 
-let undef;
-console.log(typeof undef); // Output: undefined
+let myArray = [1, 2, 3];
+console.log(myArray); // Output: [1, 2, 3]
 
 /*
-5. Null:
+5. Object:
+   - Represents a collection of key-value pairs.
+   - Key (property name) and Value (property value) pairs.
+   - Examples:
 */
 
-let n = null;
-console.log(typeof n); // Output: object (Note: This is an odd behavior in JavaScript)
-
-/*
-6. Object:
-*/
-
-let obj = { name: "John", age: 30 };
-console.log(typeof obj); // Output: object
-
-/*
-7. Array:
-*/
-
-let arr = [1, 2, 3, 4, 5];
-console.log(typeof arr); // Output: object
-
-/*
-8. Function:
-*/
-
-let add = function (a, b) {
-  return a + b;
+let myObject = {
+  name: "John",
+  age: 30,
+  isStudent: false,
 };
-console.log(typeof add); // Output: function
+console.log(myObject); // Output: { name: 'John', age: 30, isStudent: false }
 
 /*
-  Summary: JavaScript has various data types including numbers, strings, booleans, undefined, null, objects, arrays, and functions.
-  Each type serves a different purpose and understanding them is crucial for working with data in JavaScript.
-  Remember: Use typeof operator to determine the type of a variable or value.
-  */
+6. Function:
+   - Represents reusable blocks of code.
+   - Can be called with arguments to perform a task.
+   - Examples:
+*/
+
+function greet(name) {
+  return "Hello, " + name + "!";
+}
+
+console.log(greet("Alice")); // Output: Hello, Alice!
+
+/*
+7. Undefined:
+   - Represents a variable that has been declared but not assigned a value.
+   - When a variable is declared but not initialized.
+*/
+
+let undefinedVariable;
+console.log(undefinedVariable); // Output: undefined
+
+/*
+8. Null:
+   - Represents the intentional absence of any object value.
+   - It is a special value meaning "no value" or "empty".
+*/
+
+let nullVariable = null;
+console.log(nullVariable); // Output: null
+
+/*
+9. NaN (Not-a-Number):
+   - Represents a value that is not a legal number.
+*/
+
+let result = 10 / "Hello";
+console.log(result); // Output: NaN
+
+/*
+10. Infinity and -Infinity:
+   - Represent positive and negative infinity.
+*/
+
+let positiveInfinity = Infinity;
+let negativeInfinity = -Infinity;
+
+console.log(positiveInfinity); // Output: Infinity
+console.log(negativeInfinity); // Output: -Infinity
+
+/*
+Difference between Primitive and Complex Data Types:
+- Primitive data types are stored directly in the location the variable accesses.
+  - When you manipulate a primitive value, you are working directly on the value itself.
+  - Passed to a function by copy: When passed to a function, a new copy of the value is created.
+    Any changes made inside the function do not affect the original value.
+
+- Complex data types are stored as references.
+  - When you manipulate a complex value, you are working with a reference (memory address) to the value.
+  - Passed to a function by reference: When passed to a function, it is the reference to the object that is copied.
+    Changes made to the object inside the function will affect the original object.
+*/
+
+let num1 = 10; // Primitive
+let num2 = num1; // Copy of num1
+
+num2 = 20;
+console.log(num1); // Output: 10 (num1 remains unchanged)
+
+let arr1 = [1, 2, 3]; // Complex
+let arr2 = arr1; // Reference to arr1
+
+arr2.push(4);
+console.log(arr1); // Output: [1, 2, 3, 4] (arr1 is modified because arr2 is pointing to the same array)
+
+/*
+Summary:
+JavaScript offers a variety of data types, each with its own characteristics:
+- Numbers, Strings, and Booleans for basic data storage.
+- Arrays and Objects for storing collections of data.
+- Functions for reusable blocks of code.
+- Undefined and Null for representing absence of values.
+- NaN, Infinity, and -Infinity for special numerical cases.
+Primitive data types are passed by copy, while complex data types are passed by reference.
+Understanding these distinctions is essential for writing efficient and effective JavaScript code.
+*/

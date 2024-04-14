@@ -1,70 +1,77 @@
 /*
 Understanding JavaScript Variables
 
-What are Variables?
+Introduction:
+Variables in JavaScript are used to store data values. They provide a way to name and refer to data that can change during the execution of a script. There are different ways to declare variables, each with its scope and behavior.
 
-Definition: Variables in JavaScript are containers for storing data values.
-  They are like symbolic names for values that allow you to refer to those values by name.
+Declaration and Assignment:
 
-In JavaScript, variables can hold different types of data:
-  -Numbers
-  -Strings
-  -Booleans
-  -Arrays
-  -Objects
-  -Functions
-  -...and more
+1. Declaration: Creating a variable using var, let, or const.
+2. Assignment: Giving a variable a value.
 
-Why are They Useful?
+var, let, and const:
 
-Dynamic Typing: JavaScript variables do not have a fixed type. The same variable can hold different types of values.
-
-Data Storage: Variables are essential for storing and manipulating data in programs.
-
-Flexibility: They allow us to write flexible and reusable code by storing values that can change during the execution of a script.
-
-
-A variable declaration with 'let' keyword.
-The 'let' keyword allows you to declare a variable that can be reassigned.
+1. var:
+   - Historically used in JavaScript for variable declaration.
+   - Has function scope, meaning it is only available within the function it is declared in.
+   - Can be reassigned and updated.
 */
 
-let myVariable = "Hello, JavaScript!";
-
-console.log(myVariable); // Output: Hello, JavaScript!
-
-/*
-  Variable Scope: 'let' variables are block-scoped.
-  They are accessible only within the block or function where they are defined.
-*/
-
-{
-  let blockVariable = "I'm inside a block!";
-  console.log(blockVariable); // Output: I'm inside a block!
-}
-
-// console.log(blockVariable); // This will throw an error because 'blockVariable' is not defined here
+var myVar = "Hello, JavaScript!";
+console.log(myVar); // Output: Hello, JavaScript!
 
 /*
-  A constant variable declaration with 'const' keyword.
-  The 'const' keyword declares a constant variable that cannot be reassigned.
-*/
-
-const pi = 3.14159;
-
-console.log(pi); // Output: 3.14159
-
-// pi = 3; // This will throw an error because you cannot reassign a constant variable
-
-/*
-  Variable Hoisting: Variable declarations are hoisted to the top of their scope during compilation.
-  However, the assignment does not get hoisted, so variables are initialized with 'undefined' before they are assigned a value.
+   - var variables can be redeclared.
+   - Variables are hoisted to the top of their scope during compilation.
 */
 
 console.log(hoistedVar); // Output: undefined
 var hoistedVar = "I was hoisted!";
 
 /*
-  Summary: Variables in JavaScript are containers for storing data values.
-  'let' allows reassignment and is block-scoped, while 'const' creates constants that cannot be reassigned.
-  Remember: Use 'let' for variables that will change, 'const' for constants, and be aware of variable hoisting.
-  */
+2. let:
+   - Introduced in ES6 (ECMAScript 2015) for block-scoped variables.
+   - Limited to the block ({ }) in which it is declared.
+   - Can be reassigned but not redeclared.
+*/
+
+let myLet = "Hello, let!";
+console.log(myLet); // Output: Hello, let!
+
+// console.log(letVariable); // This will throw an error because 'letVariable' is not defined here
+
+/*
+3. const:
+   - Also introduced in ES6 for constants.
+   - Has block scope like let.
+   - Cannot be reassigned or redeclared.
+   - Should be used for variables that should not change.
+*/
+
+const myConst = "Hello, const!";
+console.log(myConst); // Output: Hello, const!
+
+// myConst = "New Value"; // This will throw an error because you cannot reassign a constant variable
+
+/*
+Hoisting:
+
+- Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope during compilation.
+- Declarations are hoisted, but assignments are not.
+- Variables declared with var are hoisted to the top of their function scope.
+- Variables declared with let and const are hoisted, but they are not initialized. Accessing them before the declaration will result in a ReferenceError.
+*/
+
+console.log(hoistedVar); // Output: undefined (hoisted, but not yet assigned)
+
+var hoistedVar = "I was hoisted!";
+
+/*
+Summary:
+JavaScript variables can be declared using var, let, or const.
+- var has function scope and can be redeclared.
+- let has block scope and can be reassigned but not redeclared.
+- const has block scope and cannot be reassigned or redeclared.
+- Variables declared with var are hoisted and can be accessed before the declaration.
+- Variables declared with let and const are hoisted but not initialized, leading to a ReferenceError if accessed before the declaration.
+*/

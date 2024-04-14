@@ -1,122 +1,185 @@
 /*
 Understanding JavaScript Operators
 
-Operators in JavaScript are symbols that perform operations on operands.
-  - Operands can be values, variables, or expressions.
-  - Operators allow you to perform calculations, manipulate values, and more.
-
-JavaScript has various types of operators:
-  - Assignment Operators
-  - Arithmetic Operators
-  - Comparison Operators
-  - Logical Operators
-  - Ternary Operator (Conditional Operator)
+Operators in JavaScript are symbols that perform operations on variables and values.
 
 Assignment Operators:
 
-Used to assign values to variables.
-
-Operator: =
-Purpose: Assigns the value on the right to the variable on the left.
+1. '=' (Assignment):
+   - Assigns a value to a variable.
+   - Example:
 
 */
 
-let x = 5;
-let y = 3;
+let x = 10;
+console.log(x); // Output: 10
 
 /*
 Arithmetic Operators:
 
-Used to perform mathematical calculations.
-
-Operators: + (addition), - (subtraction), * (multiplication), / (division), % (modulo), ** (exponentiation)
-
+2. '+' (Addition):
+   - Adds two operands.
+   - Example:
 */
 
-let additionResult = x + y;
-let subtractionResult = x - y;
-let multiplicationResult = x * y;
-let divisionResult = x / y;
-let moduloResult = x % y;
-let exponentiationResult = x ** y;
-
+let additionResult = 5 + 3;
 console.log(additionResult); // Output: 8
-console.log(subtractionResult); // Output: 2
-console.log(multiplicationResult); // Output: 15
-console.log(divisionResult); // Output: 1.6666666666666667
-console.log(moduloResult); // Output: 2
-console.log(exponentiationResult); // Output: 125
+
+/*
+3. '-' (Subtraction):
+   - Subtracts the right operand from the left operand.
+   - Example:
+*/
+
+let subtractionResult = 10 - 5;
+console.log(subtractionResult); // Output: 5
+
+/*
+4. '*' (Multiplication):
+   - Multiplies two operands.
+   - Example:
+*/
+
+let multiplicationResult = 6 * 4;
+console.log(multiplicationResult); // Output: 24
+
+/*
+5. '/' (Division):
+   - Divides the left operand by the right operand.
+   - Example:
+*/
+
+let divisionResult = 20 / 5;
+console.log(divisionResult); // Output: 4
+
+/*
+6. '%' (Modulus):
+   - Returns the remainder when the left operand is divided by the right operand.
+   - Example:
+*/
+
+let modulusResult = 10 % 3;
+console.log(modulusResult); // Output: 1
 
 /*
 Comparison Operators:
 
-Used to compare values and return a boolean result.
-
-Operators: == (equal to), === (strict equal to), != (not equal to), !== (strict not equal to),
-           > (greater than), < (less than), >= (greater than or equal to), <= (less than or equal to)
-
+7. '==' (Equal to):
+   - Compares two values for equality.
+   - Example:
 */
 
-let isEqual = x == y;
-let isStrictEqual = x === y;
-let isNotEqual = x != y;
-let isStrictNotEqual = x !== y;
-let isGreaterThan = x > y;
-let isLessThan = x < y;
-let isGreaterOrEqual = x >= y;
-let isLessOrEqual = x <= y;
+console.log(5 == 5); // Output: true
 
-console.log(isEqual); // Output: false
-console.log(isStrictEqual); // Output: false
-console.log(isNotEqual); // Output: true
-console.log(isStrictNotEqual); // Output: true
-console.log(isGreaterThan); // Output: true
-console.log(isLessThan); // Output: false
-console.log(isGreaterOrEqual); // Output: true
-console.log(isLessOrEqual); // Output: false
+/*
+8. '!=' (Not equal to):
+   - Compares two values for inequality.
+   - Example:
+*/
+
+console.log(5 != 10); // Output: true
+
+/*
+9. '>' (Greater than):
+   - Checks if the left operand is greater than the right operand.
+   - Example:
+*/
+
+console.log(10 > 5); // Output: true
+
+/*
+10. '<' (Less than):
+    - Checks if the left operand is less than the right operand.
+    - Example:
+*/
+
+console.log(3 < 8); // Output: true
+
+/*
+11. '>=' (Greater than or equal to):
+    - Checks if the left operand is greater than or equal to the right operand.
+    - Example:
+*/
+
+console.log(7 >= 7); // Output: true
+
+/*
+12. '<=' (Less than or equal to):
+    - Checks if the left operand is less than or equal to the right operand.
+    - Example:
+*/
+
+console.log(5 <= 4); // Output: false
 
 /*
 Logical Operators:
 
-Used to combine or manipulate boolean values.
-
-Operators: && (logical AND), || (logical OR), ! (logical NOT)
-
+13. '&&' (Logical AND):
+    - Returns true if both operands are true.
+    - Example:
 */
 
-let isTrue = true;
-let isFalse = false;
-
-let logicalAnd = isTrue && isFalse;
-let logicalOr = isTrue || isFalse;
-let logicalNot = !isTrue;
-
-console.log(logicalAnd); // Output: false
-console.log(logicalOr); // Output: true
-console.log(logicalNot); // Output: false
+console.log(true && true); // Output: true
 
 /*
-Ternary Operator (Conditional Operator):
+14. '||' (Logical OR):
+    - Returns true if at least one operand is true.
+    - Example:
+*/
 
-A shorthand for an if-else statement.
+console.log(true || false); // Output: true
 
-Syntax: condition ? value1 : value2
-  - If 'condition' is true, returns 'value1'.
-  - If 'condition' is false, returns 'value2'.
+/*
+15. '!' (Logical NOT):
+    - Returns the opposite of the operand's boolean value.
+    - Example:
+*/
 
+console.log(!true); // Output: false
+
+/*
+Unary Operators:
+
+16. '+' (Unary Plus):
+    - Attempts to convert the operand into a number.
+    - Example:
+*/
+
+let unaryPlusResult = +"5";
+console.log(unaryPlusResult); // Output: 5 (number)
+
+/*
+17. '-' (Unary Negation):
+    - Negates the operand.
+    - Example:
+*/
+
+let unaryNegationResult = -10;
+console.log(unaryNegationResult); // Output: -10
+
+/*
+Ternary Operator:
+
+18. '?' (Ternary Operator):
+    - An alternative to the 'if...else' statement.
+    - Syntax: condition ? expr1 : expr2
+    - If the condition is true, expr1 is returned; otherwise, expr2 is returned.
+    - Example:
 */
 
 let age = 20;
-let isAdult = age >= 18 ? "Yes" : "No";
-
-console.log(isAdult); // Output: Yes
+let status = age >= 18 ? "Adult" : "Minor";
+console.log(status); // Output: Adult
 
 /*
-  Summary: JavaScript provides a variety of operators for different purposes.
-  - Assignment operators are used to assign values.
-  - Arithmetic operators perform mathematical calculations.
-  - Comparison operators compare values.
-  - Logical operators manipulate boolean values.
-  - Ternary operator provides a shorthand for conditional expressions.
-  Remember: Each operator has its own specific use case and behavior.
+Summary:
+JavaScript offers a wide range of operators for various operations:
+- Assignment operators for assigning values.
+- Arithmetic operators for mathematical calculations.
+- Comparison operators for comparing values.
+- Logical operators for logical operations.
+- Unary operators for operations on a single operand.
+- Ternary operator for conditional expressions.
+
+Understanding these operators is crucial for writing effective JavaScript code.
 */
