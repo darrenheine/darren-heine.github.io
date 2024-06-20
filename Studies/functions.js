@@ -2,7 +2,8 @@
 Understanding JavaScript Functions
 
 Introduction:
-Functions are one of the fundamental building blocks of JavaScript. They are reusable blocks of code that perform a specific task when called. Functions make code more organized, modular, and easier to maintain.
+Functions are one of the fundamental building blocks of JavaScript. They are reusable blocks of code that perform a specific task when called.
+Functions make code more organized, modular, and easier to maintain.
 
 Two Phases of Using Functions:
 First we must define or declare a function with a name and its implementation. This is called "function declaration" or "function definition".
